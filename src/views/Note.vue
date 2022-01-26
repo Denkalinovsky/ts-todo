@@ -79,7 +79,7 @@ export default defineComponent({
     const onRemoveTodo = (index: number) => {
       store.commit("deleteTodo", index);
     };
-    const onUpdateTodo = (text: any, index: any) => {
+    const onUpdateTodo = (text: never, index: never) => {
       let todos = JSON.parse(JSON.stringify(store.state.currentNote.todos));
 
       todos[index].text = text;
@@ -96,6 +96,7 @@ export default defineComponent({
       if (currentRoute.value.params.id) {
         // undo changes
       } else {
+        console.log("fdas");
       }
       router.push("/");
     };

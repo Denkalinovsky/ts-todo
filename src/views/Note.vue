@@ -24,6 +24,8 @@
       <button @click="DeleteNote">Delete</button>
     </div>
     <hr />
+    <Test :dataSet="dataSet" />
+    <a @click="test" href="#">asdgsadg</a>
   </div>
 </template>
 
@@ -32,16 +34,30 @@ import TodoItem from "@/components/ToDoItem.vue";
 import { defineComponent, computed, onMounted } from "vue";
 import Note from "@/models/NoteModel";
 import ToDo from "@/models/ToDoModel";
+import Test from "@/components/Test.vue";
 import store from "@/store";
 import router from "@/router";
+import dataSet from "@/models/aModel";
 
 export default defineComponent({
   name: "Note",
   components: {
     TodoItem,
+    Test,
   },
   setup() {
     const note = computed(() => store.state.currentNote);
+
+    const test = () => {
+      // dataSet.smart = ""
+      // console.log({test: dataSet.smart});
+    };
+    let dataSet: dataSet = {
+      smart: [
+        { test: "12412", indexDataSet: 12 },
+        { test: "1244124", indexDataSet: 12 },
+      ],
+    };
 
     const saveNote = () => {
       store.dispatch("saveNote");
@@ -110,6 +126,7 @@ export default defineComponent({
     };
 
     return {
+      test,
       note,
       saveNote,
       addNewTodo,

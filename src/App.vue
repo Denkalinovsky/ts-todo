@@ -3,8 +3,8 @@
     <nav>
       <router-link class="router-link" to="/" exact>List Of Notes</router-link>
       <router-link class="router-link" to="/note" exact
-        >Create Note</router-link
-      >
+        >Create Note
+      </router-link>
     </nav>
     <hr />
     <router-view />
@@ -16,9 +16,5 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "App",
-  setup() {
-    const test = null;
-    return test;
-  },
 });
 </script>

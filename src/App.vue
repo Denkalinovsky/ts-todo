@@ -1,20 +1,16 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link class="router-link" to="/" exact>List Of Notes</router-link>
-      <router-link class="router-link" to="/note" exact
-        >Create Note
-      </router-link>
-    </nav>
-    <hr />
+    <Header />
     <router-view />
   </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
+import Header from "@/components/Header";
 
 export default defineComponent({
   name: "App",
+  components: [Header],
 });
 </script>
